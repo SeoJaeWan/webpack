@@ -7,10 +7,15 @@ module.exports = {
     path: path.join(__dirname, "/dist"),
     filename: "main.js",
   },
+
+  resolve: {
+    extensions: [".js", ".jsx"],
+  },
+
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.(js|jsx)$/,
         exclude: /node_module/,
         use: {
           loader: "babel-loader",
@@ -36,13 +41,27 @@ module.exports = {
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/,
-        use: ["file-loader"],
+        use: {
+          loader: "file-loader",
+          options: {
+            name: "[name].[ext]",
+            outputPath: "font",
+          },
+        },
       },
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
+      title: "Test Title",
+      meta: {
+        "X-UA-Compatible": {
+          "http-equiv": "X-UA-Compatible",
+          content: "IE=edge",
+        },
+      },
+      favicon: `favicon.svg`,
     }),
   ],
 };
