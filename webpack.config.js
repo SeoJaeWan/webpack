@@ -4,7 +4,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 module.exports = {
   entry: "./src/index.js",
   output: {
-    path: path.join(__dirname, "/dist"),
+    path: path.join(__dirname, "/build"),
     filename: "main.js",
   },
 
@@ -54,14 +54,6 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       template: "./public/index.html",
-      title: "Test Title",
-      meta: {
-        "X-UA-Compatible": {
-          "http-equiv": "X-UA-Compatible",
-          content: "IE=edge",
-        },
-      },
-      favicon: `favicon.svg`,
     }),
   ],
 };
