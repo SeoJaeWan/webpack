@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import blackHanSans from "./assets/fonts/BlackHanSans-Regular.ttf";
 
 const CustomDiv = styled.div`
   @font-face {
@@ -14,7 +13,8 @@ const CustomDiv = styled.div`
 `;
 
 const App = () => {
-  // console.log(blackHanSans);
+  console.log(process.env.TEST_TEXT);
+
   return (
     <div>
       <div>
