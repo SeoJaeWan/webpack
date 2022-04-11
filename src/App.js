@@ -1,10 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import BlackHans from "./assets/fonts/BlackHanSans-Regular.ttf";
+import Logo from "./logo.png";
 
 const CustomDiv = styled.div`
   @font-face {
     font-family: "BlackHanSans";
-    src: url("./assets/fonts/BlackHanSans-Regular.ttf") format("truetype");
+    src: url(${BlackHans}) format("truetype");
   }
 
   * {
@@ -13,11 +15,10 @@ const CustomDiv = styled.div`
 `;
 
 const App = () => {
-  console.log(process.env.TEST_TEXT);
-
   return (
     <div>
       <div>
+        <img src={Logo} />
         <h1>Hello! Webpack World!</h1>
       </div>
       <CustomDiv>
